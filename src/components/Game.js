@@ -36,46 +36,46 @@ const Game = () => {
       image: keiraImg,
       title: "Keira Metz",
     },
-    // {
-    //   key: 5,
-    //   image: emhyrImg,
-    //   title: "Emhyr var Emreis",
-    // },
-    // {
-    //   key: 6,
-    //   image: rocheImg,
-    //   title: "Roche",
-    // },
-    // {
-    //   key: 7,
-    //   image: ciriImg,
-    //   title: "Cirilla",
-    // },
-    // {
-    //   key: 8,
-    //   image: baronImg,
-    //   title: "Bloody Baron",
-    // },
-    // {
-    //   key: 9,
-    //   image: cerysImg,
-    //   title: "Cerys an Caite",
-    // },
-    // {
-    //   key: 10,
-    //   image: iorImg,
-    //   title: "Iorveth",
-    // },
-    // {
-    //   key: 11,
-    //   image: lethoImg,
-    //   title: "Letho",
-    // },
-    // {
-    //   key: 12,
-    //   image: philImg,
-    //   title: "Philippa Eilhart",
-    // },
+    {
+      key: 5,
+      image: emhyrImg,
+      title: "Emhyr var Emreis",
+    },
+    {
+      key: 6,
+      image: rocheImg,
+      title: "Roche",
+    },
+    {
+      key: 7,
+      image: ciriImg,
+      title: "Cirilla",
+    },
+    {
+      key: 8,
+      image: baronImg,
+      title: "Bloody Baron",
+    },
+    {
+      key: 9,
+      image: cerysImg,
+      title: "Cerys an Caite",
+    },
+    {
+      key: 10,
+      image: iorImg,
+      title: "Iorveth",
+    },
+    {
+      key: 11,
+      image: lethoImg,
+      title: "Letho",
+    },
+    {
+      key: 12,
+      image: philImg,
+      title: "Philippa Eilhart",
+    },
   ]);
 
   const cardCount = cards.length;
@@ -84,6 +84,7 @@ const Game = () => {
   const [hits, setHits] = useState([]);
   const [lost, setLost] = useState(false);
   const [won, setWon] = useState(false);
+  const [first, setFirst] = useState(false);
 
   const reset = () => {
     setScore(0);
@@ -102,13 +103,22 @@ const Game = () => {
   };
 
   useEffect(() => {
+    const newCards = cards.sort(() => Math.random() - 0.5);
+    setCards(newCards);
+
     if (score === cardCount) {
       setWon(true);
     }
     if (score >= bestScore) setBestScore(score);
-    const newCards = cards.sort(() => Math.random() - 0.5);
-    setCards(newCards);
   }, [score, bestScore, cards, cardCount]);
+
+  useEffect(() => {
+    if (first === false) {
+      const newCards = cards.sort(() => Math.random() - 0.5);
+      setCards(newCards);
+      setFirst(true);
+    }
+  }, [first, cards]);
 
   const displayCards = () => {
     const cardList = cards.map((card) => (
@@ -130,7 +140,7 @@ const Game = () => {
       return (
         <div className="success">
           <div>
-            <strong>You Won!</strong>
+            <strong>You Won!</strong> Congratulations
           </div>
           <button onClick={reset}>New Game</button>
         </div>
@@ -161,6 +171,7 @@ const Game = () => {
         <div className="score">Best: {bestScore}</div>
       </div>
       <div className="card-container">{displayCards()}</div>
+      <div className="footer"></div>
     </>
   );
 };
