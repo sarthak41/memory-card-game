@@ -13,7 +13,6 @@ import cerysImg from "../images/cerys.webp";
 import iorImg from "../images/iorveth.webp";
 import lethoImg from "../images/letho.webp";
 import philImg from "../images/philippa.jpg";
-import uniqid from "uniqid";
 
 const Game = () => {
   const [cards, setCards] = useState([
@@ -79,16 +78,36 @@ const Game = () => {
     },
   ]);
 
+  const cardCount = cards.length;
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [hits, setHit] = useState(Array(12).fill(false));
+  const [hits, setHits] = useState([]);
+  const [lost, setLost] = useState(false);
+  const [won, setWon] = useState(false);
 
-  const incrScore = (event) => {
-    setScore(score + 1);
-    console.log(event.target.parentNode.parentNode);
+  const reset = () => {
+    setScore(0);
+    setHits([]);
+    setLost(false);
+    setLost(false);
+  };
+
+  const incrScore = (card) => {
+    if (hits.includes(card)) {
+      setTimeout(() => {
+        setScore(0);
+        setHits([]);
+      }, 500);
+    } else {
+      setHits([...hits, card]);
+      setScore(score + 1);
+    }
   };
 
   useEffect(() => {
+    if (score === cardCount) {
+      setTimeout(() => setScore(0), 500);
+    }
     if (score >= bestScore) setBestScore(score);
     const newCards = cards.sort(() => Math.random() - 0.5);
     setCards(newCards);
@@ -96,7 +115,12 @@ const Game = () => {
 
   const displayCards = () => {
     const cardList = cards.map((card) => (
-      <li key={card.key} onClick={incrScore}>
+      <li
+        key={card.key}
+        onClick={() => {
+          incrScore(card);
+        }}
+      >
         <Card image={card.image} title={card.title} />
       </li>
     ));
