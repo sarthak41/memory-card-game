@@ -1,9 +1,10 @@
-@import url(reset-style.css);
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+img {
+  height: 100%;
+}
 
 .card {
   width: 225px;
-  height: auto;
+  height: 100%;
   border: 8px ridge gold;
   box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.3);
   font-size: 1rem;

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('./styles/reset-style.css');
 
 * {
   font-family: "PT Sans";
@@ -42,4 +43,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  display: flex;
+  justify-content: center;
 }
