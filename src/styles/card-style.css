@@ -3,7 +3,7 @@ img {
 }
 
 .card {
-  width: 225px;
+  width: 175px;
   height: 100%;
   border: 8px ridge gold;
   box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.3);

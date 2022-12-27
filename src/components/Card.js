@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import "../styles/card-style.css";
 
 const Card = (props) => {
-  // const [hit, setHit] = useState(false);
-
-  // const hitCard = () => {
-  //   setHit(true);
-  // };
-
   return (
     <div className="card">
       <img src={props.image} alt={props.title} />

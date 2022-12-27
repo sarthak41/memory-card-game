@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
-import "../styles/container-style.css";
+import "../styles/game-style.css";
 import geraltImg from "../images/geralt-of-rivia.jpg";
 import yenImg from "../images/yennefer-of-vengerberg.jpg";
 import trissImg from "../images/triss.jpg";
@@ -36,46 +36,46 @@ const Game = () => {
       image: keiraImg,
       title: "Keira Metz",
     },
-    {
-      key: 5,
-      image: emhyrImg,
-      title: "Emhyr var Emreis",
-    },
-    {
-      key: 6,
-      image: rocheImg,
-      title: "Roche",
-    },
-    {
-      key: 7,
-      image: ciriImg,
-      title: "Cirilla",
-    },
-    {
-      key: 8,
-      image: baronImg,
-      title: "Bloody Baron",
-    },
-    {
-      key: 9,
-      image: cerysImg,
-      title: "Cerys an Caite",
-    },
-    {
-      key: 10,
-      image: iorImg,
-      title: "Iorveth",
-    },
-    {
-      key: 11,
-      image: lethoImg,
-      title: "Letho",
-    },
-    {
-      key: 12,
-      image: philImg,
-      title: "Philippa Eilhart",
-    },
+    // {
+    //   key: 5,
+    //   image: emhyrImg,
+    //   title: "Emhyr var Emreis",
+    // },
+    // {
+    //   key: 6,
+    //   image: rocheImg,
+    //   title: "Roche",
+    // },
+    // {
+    //   key: 7,
+    //   image: ciriImg,
+    //   title: "Cirilla",
+    // },
+    // {
+    //   key: 8,
+    //   image: baronImg,
+    //   title: "Bloody Baron",
+    // },
+    // {
+    //   key: 9,
+    //   image: cerysImg,
+    //   title: "Cerys an Caite",
+    // },
+    // {
+    //   key: 10,
+    //   image: iorImg,
+    //   title: "Iorveth",
+    // },
+    // {
+    //   key: 11,
+    //   image: lethoImg,
+    //   title: "Letho",
+    // },
+    // {
+    //   key: 12,
+    //   image: philImg,
+    //   title: "Philippa Eilhart",
+    // },
   ]);
 
   const cardCount = cards.length;
@@ -89,15 +89,12 @@ const Game = () => {
     setScore(0);
     setHits([]);
     setLost(false);
-    setLost(false);
+    setWon(false);
   };
 
   const incrScore = (card) => {
     if (hits.includes(card)) {
-      setTimeout(() => {
-        setScore(0);
-        setHits([]);
-      }, 500);
+      setLost(true);
     } else {
       setHits([...hits, card]);
       setScore(score + 1);
@@ -106,12 +103,12 @@ const Game = () => {
 
   useEffect(() => {
     if (score === cardCount) {
-      setTimeout(() => setScore(0), 500);
+      setWon(true);
     }
     if (score >= bestScore) setBestScore(score);
     const newCards = cards.sort(() => Math.random() - 0.5);
     setCards(newCards);
-  }, [score, bestScore, cards]);
+  }, [score, bestScore, cards, cardCount]);
 
   const displayCards = () => {
     const cardList = cards.map((card) => (
@@ -120,6 +117,7 @@ const Game = () => {
         onClick={() => {
           incrScore(card);
         }}
+        disabled={won || lost}
       >
         <Card image={card.image} title={card.title} />
       </li>
@@ -127,11 +125,40 @@ const Game = () => {
     return <ul>{cardList}</ul>;
   };
 
+  const alert = () => {
+    if (won === true) {
+      return (
+        <div className="success">
+          <div>
+            <strong>You Won!</strong>
+          </div>
+          <button onClick={reset}>New Game</button>
+        </div>
+      );
+    } else if (lost === true) {
+      return (
+        <div className="failure">
+          <div>
+            <strong>You Lost!</strong> Try again
+          </div>
+          <button onClick={reset}>New Game</button>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
     <>
-      <div>
-        <div>Score: {score}</div>
-        <div>Best: {bestScore}</div>
+      <div className="header">
+        <h1>Witcher Memory Game</h1>
+        <div>Pick a card, but do not pick it again!</div>
+      </div>
+      <div className="bar">
+        {alert()}
+        <div className="score">Score: {score}</div>
+        <div className="score">Best: {bestScore}</div>
       </div>
       <div className="card-container">{displayCards()}</div>
     </>
