@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/my-app/static/css/main.d6225320.css",
-    "main.js": "/my-app/static/js/main.4dfc406a.js",
-    "static/js/787.079dd69e.chunk.js": "/my-app/static/js/787.079dd69e.chunk.js",
-    "static/media/bg.png": "/my-app/static/media/bg.cca0cf5c4c099126e71c.png",
-    "static/media/geralt-of-rivia.jpg": "/my-app/static/media/geralt-of-rivia.844a62e2c68845ac3849.jpg",
-    "static/media/ciri.jpg": "/my-app/static/media/ciri.74562279ec476ee2e417.jpg",
-    "static/media/emhyr.jpg": "/my-app/static/media/emhyr.d6ac144b49b25080fa7d.jpg",
-    "static/media/yennefer-of-vengerberg.jpg": "/my-app/static/media/yennefer-of-vengerberg.1881e34721ed299cbae5.jpg",
-    "static/media/philippa.jpg": "/my-app/static/media/philippa.8512b4f2a081de4ff068.jpg",
-    "static/media/iorveth.webp": "/my-app/static/media/iorveth.efd1863ec9c894065902.webp",
-    "static/media/letho.webp": "/my-app/static/media/letho.9d802fce983674ac7fd6.webp",
-    "static/media/triss.jpg": "/my-app/static/media/triss.ba6a718e522d1e4b248a.jpg",
-    "static/media/roche.webp": "/my-app/static/media/roche.fa3d05964b6dbca1b36e.webp",
-    "static/media/baron.webp": "/my-app/static/media/baron.8e57b8faffaa3f7503d4.webp",
-    "static/media/cerys.webp": "/my-app/static/media/cerys.e74bcf7bcb8c5741b118.webp",
-    "static/media/keira.webp": "/my-app/static/media/keira.ec4d974dc4155a62bd3f.webp",
-    "index.html": "/my-app/index.html",
-    "main.d6225320.css.map": "/my-app/static/css/main.d6225320.css.map",
-    "main.4dfc406a.js.map": "/my-app/static/js/main.4dfc406a.js.map",
-    "787.079dd69e.chunk.js.map": "/my-app/static/js/787.079dd69e.chunk.js.map"
+    "main.css": "/memory-card-game/static/css/main.49e0b092.css",
+    "main.js": "/memory-card-game/static/js/main.80501948.js",
+    "static/js/787.079dd69e.chunk.js": "/memory-card-game/static/js/787.079dd69e.chunk.js",
+    "static/media/bg.png": "/memory-card-game/static/media/bg.cca0cf5c4c099126e71c.png",
+    "static/media/geralt-of-rivia.jpg": "/memory-card-game/static/media/geralt-of-rivia.844a62e2c68845ac3849.jpg",
+    "static/media/ciri.jpg": "/memory-card-game/static/media/ciri.74562279ec476ee2e417.jpg",
+    "static/media/emhyr.jpg": "/memory-card-game/static/media/emhyr.d6ac144b49b25080fa7d.jpg",
+    "static/media/yennefer-of-vengerberg.jpg": "/memory-card-game/static/media/yennefer-of-vengerberg.1881e34721ed299cbae5.jpg",
+    "static/media/philippa.jpg": "/memory-card-game/static/media/philippa.8512b4f2a081de4ff068.jpg",
+    "static/media/iorveth.webp": "/memory-card-game/static/media/iorveth.efd1863ec9c894065902.webp",
+    "static/media/letho.webp": "/memory-card-game/static/media/letho.9d802fce983674ac7fd6.webp",
+    "static/media/triss.jpg": "/memory-card-game/static/media/triss.ba6a718e522d1e4b248a.jpg",
+    "static/media/roche.webp": "/memory-card-game/static/media/roche.fa3d05964b6dbca1b36e.webp",
+    "static/media/baron.webp": "/memory-card-game/static/media/baron.8e57b8faffaa3f7503d4.webp",
+    "static/media/cerys.webp": "/memory-card-game/static/media/cerys.e74bcf7bcb8c5741b118.webp",
+    "static/media/keira.webp": "/memory-card-game/static/media/keira.ec4d974dc4155a62bd3f.webp",
+    "index.html": "/memory-card-game/index.html",
+    "main.49e0b092.css.map": "/memory-card-game/static/css/main.49e0b092.css.map",
+    "main.80501948.js.map": "/memory-card-game/static/js/main.80501948.js.map",
+    "787.079dd69e.chunk.js.map": "/memory-card-game/static/js/787.079dd69e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6225320.css",
-    "static/js/main.4dfc406a.js"
+    "static/css/main.49e0b092.css",
+    "static/js/main.80501948.js"
   ]
 }
